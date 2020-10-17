@@ -17,7 +17,7 @@ oluşturabilir ve görebilirler. Bu beklentiler doğrultusunda aşağıda listel
 - Kullanılan <a href="https://dbdiagram.io/d/5f8a9f313a78976d7b780041" target="_blank"> DB Diagram </a>
 -  <a href="https://www.postman.com/collections/cb8c99df853e1d9f051a" target="_blank"> Postman Collection </a>
 
-## JWT Açıklama
+## Authentication
 - /register ve /login pathleri haric diger pathler header kısmında JWT gönderilerek yapılmalıdır. Yollanmazsa eğer "JWT Token not found" hatası alınır.
 - JWT TTL(Time To Live) 3600 saniyedir, alındıktan 3600 saniye sonra JWT yollanırsa "Expired JWT" response alınır. (Code = 401)
 - Geçersiz JWT yollanırsa "Invalid JWT Token" response alınır.
