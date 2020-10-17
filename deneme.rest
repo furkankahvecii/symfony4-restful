@@ -1,0 +1,11 @@
+
+
+
+POST http://127.0.0.1:8000/login_check
+Content-Type: application/json
+
+{
+    "username" : "test_username",
+    "password" : "test_password"
+}
+
