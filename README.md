@@ -14,7 +14,8 @@ oluşturabilir ve görebilirler. Bu beklentiler doğrultusunda aşağıda listel
 - API geliştirdiğimiz için ```php symfony/skeleton my_project_name --version= 4.0``` ile yapı kuruldu. Temel olarak bir 'FOSRestBundle' paketi kullanılarak RESTFUL API geliştirildi. Resourcelarımız mysql veritabanında tutuldu. JWT için ```"lexik/jwt-authentication-bundle"``` kullanıldı.
 - Programı indirdikten sonra, .env dosyasındaki DATABASE_URL keyine karşılık gelen değeri sizde bulunan mysql'e göre ayarlamanız gerekmektedir. Örnek olarak mysql://root:@127.0.0.1:3306/restful. (mysql://username:password@hostname:mysqlport/dbname)
 - symfony server:start ile web serverı çalıştırabiliriz. (http://127.0.0.1:8000/)
-- Kullanılan <a href="https://dbdiagram.io/d/5f8a9f313a78976d7b780041"> DB Diagram </a>
+- Kullanılan <a href="https://dbdiagram.io/d/5f8a9f313a78976d7b780041" target="_blank"> DB Diagram </a>
+-  <a href="https://www.postman.com/collections/cb8c99df853e1d9f051a" target="_blank"> Postman Collection </a>
 
 ## JWT Açıklama
 - /register ve /login pathleri haric diger pathler header kısmında JWT gönderilerek yapılmalıdır. Yollanmazsa eğer "JWT Token not found" hatası alınır.
