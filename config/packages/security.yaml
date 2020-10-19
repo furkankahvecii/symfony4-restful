@@ -1,12 +1,12 @@
 security:
     encoders:
-        App\Entity\Customer:
+        App\Entity\User:
             algorithm: bcrypt
 
     providers:
         entity_provider:
             entity:
-                class: App\Entity\Customer
+                class: App\Entity\User
                 property: username
 
     firewalls:
@@ -26,27 +26,45 @@ security:
             pattern:  ^/register
             stateless: true
             anonymous: true
-
-        api:
-            pattern:  ^/api
+            
+        orders:
+            pattern:  ^/orders
             stateless: true
             anonymous: false
             provider: entity_provider
             guard:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
-        get_musteri:
-            pattern:  ^/get_musteri
+        addorder:
+            pattern:  ^/addorder
             stateless: true
             anonymous: false
             provider: entity_provider
             guard:
                 authenticators:
                     - lexik_jwt_authentication.jwt_token_authenticator
-
+          
+        detailorder:
+          pattern:  ^/detailorder
+          stateless: true
+          anonymous: false
+          provider: entity_provider
+          guard:
+              authenticators:
+                  - lexik_jwt_authentication.jwt_token_authenticator
+        updateorder:
+          pattern:  ^/updateorder
+          stateless: true
+          anonymous: false
+          provider: entity_provider
+          guard:
+              authenticators:
+                  - lexik_jwt_authentication.jwt_token_authenticator
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/get_musteri, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/orders, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/addorder, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/detailorder, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/updateorder, roles: IS_AUTHENTICATED_FULLY }
